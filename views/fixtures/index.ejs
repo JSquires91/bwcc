@@ -1,0 +1,25 @@
+<h2>Search Fixtures</h2>
+<form action="/fixtures" method="GET">
+    <div>
+        <label>Location</label>
+        <input type="text" name="location" value="<%= searchOptions.location %>">
+    </div>
+
+    <div>
+        <label>Date From</label>
+        <input type="date" name="dateFrom" value="<%= searchOptions.dateFrom %>">
+    </div>
+
+    <div>
+        <label>Date To</label>
+        <input type="date" name="dateTo" value="<%= searchOptions.dateTo %>">
+    </div>
+
+    <button type="submit">Search</button>
+</form>
+<div>
+    <% fixtures.forEach(fixture => { %>
+        <img height="100" width="150" src="<%= fixture.teamSheetImagePath %>">
+
+    <% })%>
+</div>

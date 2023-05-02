@@ -1,0 +1,43 @@
+<div>
+    <label>Opponent</label>
+    <input type="text" name="opponent" value="<%= fixture.opponent %>">
+</div>
+
+<div>
+    <label>Location</label>
+    <input type="text" name="location" value="<%= fixture.location %>">
+</div>
+
+<div>
+    <label>Date</label>
+    <input type="date" name="date" 
+        value="<%= fixture.date == null ? '' : fixture.date.toISOString().split('T')[0] %>">
+</div>
+
+<div>
+    <label>Team</label>
+    <select name="team">
+    <% teams.forEach(team => { %>
+        <% if (team.id === fixture.team) { %>
+        <option selected label="<%= team.name %>" value="<%= team.id %>">
+        <% } else { %>
+        <option label="<%= team.name %>" value="<%= team.id %>">
+        <% } %>
+    <% }) %>
+    </select>
+</div>
+
+<div>
+    <label>Result</label>
+    <input type="text" name="result" value="<%= fixture.result %>"> 
+</div>
+
+<div>
+    <label>Scorecard</label>
+    <input type="text" name="scorecardLink" value="<%= fixture.scorecardLink %>"> 
+</div>
+
+<div>
+    <label>Team Sheet</label>
+    <input type="file" name="teamsheet"> 
+</div>
